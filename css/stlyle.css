@@ -717,14 +717,6 @@ body {
 .panel-six {
 }
 
-.main-content .panel-three {
-  height: 1015px;
-  background: #454647;
-}
-.main-content .panel-four {
-  background: #c7c7c7;
-}
-
 /* Panel One CSS */
 .main-content .panel-one {
   background: #999997;
@@ -786,6 +778,7 @@ body {
 .main-content .panel-two .panel-two-inner h3 {
   font-size: 1.7rem;
   padding-bottom: 1rem;
+  margin-bottom: 2rem;
   text-indent: 4%;
   position: relative;
 }
@@ -800,6 +793,7 @@ body {
 .main-content .panel-two .panel-two-inner h2 {
   font-size: 3rem;
   padding-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 .main-content .panel-two .panel-two-inner p {
@@ -807,4 +801,143 @@ body {
   color: #fff;
   font-size: 1.5rem;
   margin-left: 20%;
+}
+
+/* Panel Three CSS */
+.main-content .panel-three {
+  height: 1015px;
+  background: #454647;
+}
+.main-content .panel-three .panel-three-inner {
+  display: flex;
+  width: 60%;
+  margin: 0 auto;
+  padding: 8rem 0;
+}
+.main-content .panel-three .panel-three-inner .panel-three-inner-left img {
+  height: 729px;
+  width: 597px;
+  object-fit: cover;
+}
+
+.main-content .panel-three .panel-three-inner .panel-three-inner-right {
+  padding-left: 6rem;
+}
+
+.main-content .panel-three .panel-three-inner .panel-three-inner-right h3 {
+  font-size: 1.7rem;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  color: #c7c7c7;
+  text-indent: 18%;
+  position: relative;
+}
+
+.main-content
+  .panel-three
+  .panel-three-inner
+  .panel-three-inner-right
+  h3::before {
+  content: url(../img/about.png);
+  display: block;
+  position: absolute;
+  transform: scale(0.1);
+  top: -420%;
+  left: -50%;
+}
+
+.main-content .panel-three .panel-three-inner .panel-three-inner-right h2 {
+  font-family: "Poppins";
+
+  font-size: 5rem;
+  line-height: 4.5rem;
+  color: #fff;
+  padding-bottom: 3.5rem;
+}
+
+.main-content .panel-three .panel-three-inner .panel-three-inner-right p {
+  font-family: "Poppins-ExtraLight";
+  color: #fff;
+}
+
+/* Panel four CSS */
+
+.main-content .panel-four {
+  background: #c7c7c7;
+  height: 615px;
+}
+
+.main-content .panel-four .panel-four-inner {
+  display: flex;
+  width: 60%;
+  margin: 0 auto;
+  padding: 8rem 0;
+}
+
+.main-content .panel-four .panel-four-inner .panel-four-inner-left h3 {
+  font-size: 1.7rem;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  color: black;
+  text-indent: 13%;
+  position: relative;
+}
+
+.main-content .panel-four .panel-four-inner .panel-four-inner-left h3::before {
+  content: url(../img/about.png);
+  display: block;
+  position: absolute;
+  transform: scale(0.1);
+  top: -420%;
+  left: -41%;
+}
+
+.main-content .panel-four .panel-four-inner .panel-four-inner-left h2 {
+  font-family: "Poppins";
+
+  font-size: 5rem;
+  line-height: 4.5rem;
+  color: #fff;
+  padding-bottom: 3.5rem;
+}
+.main-content .panel-four .panel-four-inner .panel-four-inner-left h4 {
+  padding-bottom: 1rem;
+}
+
+.main-content .panel-four .panel-four-inner .panel-four-inner-left p {
+  line-height: 1.5rem;
+  font-family: "Poppins-ExtraLight";
+}
+.main-content .panel-four .panel-four-inner .panel-four-inner-left {
+  width: 50%;
+}
+
+/* Footer Styling */
+
+footer .footer-container {
+  height: 60px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+footer .footer-container .footer-inner {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer .footer-container .footer-inner .footer-inner-middle p {
+  transform: scale(2);
+}
+
+footer .footer-container .footer-inner .footer-inner-right ul {
+  display: flex;
+}
+footer .footer-container .footer-inner .footer-inner-right ul li {
+  list-style: none;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }

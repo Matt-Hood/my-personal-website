@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/stlyle.css" />
   </head>
   <body>
+    <script src="js/pixi.js"></script>
+
     <header>
       <div class="left-head"><p>🤵🏿 Matt Hood</p></div>
       <div class="middle-head">
@@ -32,9 +34,7 @@
             <h1>Matt.<br />Hood</h1>
             <h4>Full-Stack Developer.</h4>
           </div>
-          <div class="panel-inner-right">
-            <img src="img/_JSP4679.JPG" alt="" />
-          </div>
+          <div class="panel-inner-right" id="animated-img"></div>
         </div>
         <div class="panel-two">
           <div class="panel-two-inner">
@@ -46,20 +46,105 @@
             </p>
           </div>
         </div>
-        <div class="panel-three"></div>
-        <div class="panel-four"></div>
-        <div class="panel-five"></div>
-        <div class="panel-six"></div>
+        <div class="panel-three">
+          <div class="panel-three-inner">
+            <div class="panel-three-inner-left">
+              <img src="img/_JSP4675.JPG" alt="" />
+            </div>
+            <div class="panel-three-inner-right">
+              <h3>About</h3>
+              <h2>Get to know me</h2>
+              <p>
+                Nullam tincidunt adipiscing enim. Suspendisse potenti. Fusce
+                vulputate eleifend sapien. Nullam cursus lacinia erat. Curabitur
+                ullamcorper ultricies nisi. Praesent turpis. In ac felis quis
+                tortor malesuada pretium. Nam commodo suscipit quam. Suspendisse
+                faucibus, nunc et pellentesque egestas, lacus ante convallis
+                tellus, vitae iaculis lacus elit id tortor. In ac felis quis
+                tortor malesuada pretium. Nunc interdum lacus sit amet orci.
+                Cras risus ipsum, faucibus ut, ullamcorper id, varius ac, leo.
+                Nullam sagittis. Nulla facilisi. Nam eget dui. Nullam tincidunt
+                adipiscing enim. Suspendisse potenti. Fusce vulputate eleifend
+                sapien. Nullam cursus lacinia erat. Curabitur ullamcorper
+                ultricies nisi. Praesent turpis. In ac felis quis tortor
+                malesuada pretium. Nam commodo suscipit quam. Suspendisse
+                faucibus, nunc et pellentesque egestas, lacus ante convallis
+                tellus, vitae iaculis lacus elit id tortor. In ac felis quis
+                tortor malesuada pretium. Nunc interdum lacus sit amet orci.
+                Cras risus ipsum, faucibus ut, ullamcorper id, varius ac, leo.
+                Nullam sagittis. Nulla facilisi. Nam eget dui.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="panel-four">
+          <div class="panel-four-inner">
+            <div class="panel-four-inner-left">
+              <h3>Contact</h3>
+              <h2>Reach out and book</h2>
+              <h4>Matthew Hood</h4>
+              <p>
+                MHood Development Services
+                <br />
+                (845)-391-1805
+                <br />
+                matt.hood@simon.rochester.edu
+              </p>
+            </div>
+            <div class="panel-four-inner-right"></div>
+          </div>
+        </div>
       </div>
     </div>
     <footer>
       <div class="footer-container">
         <div class="footer-inner">
-          <div class="footer-inner-left"></div>
-          <div class="footer-inner-middle"></div>
-          <div class="footer-inner-right"></div>
+          <div class="footer-inner-left">© 2021 Matthew Hood</div>
+          <div class="footer-inner-middle"><p>🤵🏿</p></div>
+          <div class="footer-inner-right">
+            <ul>
+              <li><img src="img/social-icon-one.webp" alt="" /></li>
+              <li><img src="img/social-icon-2.webp" alt="" /></li>
+              <li><img src="img/social-icon-3.webp" alt="" /></li>
+              <li><img src="img/social-icon-4.webp" alt="" /></li>
+            </ul>
+          </div>
         </div>
       </div>
     </footer>
   </body>
+  <script>
+    var app;
+    function initPixi() {
+      app = new PIXI.Application({
+        width: 597,
+        height: 729,
+      });
+
+      document.getElementById("animated-img").appendChild(app.view);
+      var image = new PIXI.Sprite.from("img/_JSP4679.JPG");
+      image.width = 597;
+      image.height = 729;
+      app.stage.addChild(image);
+
+      displacementSprite = new PIXI.Sprite.from("img/Background.png");
+      displacementFilter = new PIXI.filters.DisplacementFilter(
+        displacementSprite
+      );
+      displacementSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
+      app.stage.addChild(displacementSprite);
+      app.stage.filters = [displacementFilter];
+      displacementSprite.scale.x = 4;
+      displacementSprite.scale.y = 4;
+      animate();
+    }
+
+    function animate() {
+      displacementSprite.x += 3;
+      displacementSprite.y += 2;
+      requestAnimationFrame(animate);
+    }
+
+    initPixi();
+  </script>
 </html>
